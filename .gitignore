@@ -1,2 +1,4 @@
 data source/
 LibriSpeech/
+darpa-timit-acousticphonetic-continuous-speech/
+saved_embeddings/
