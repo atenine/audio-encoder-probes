@@ -4,6 +4,15 @@ Code partially adapted from Jon Rawski's LING 165 Lab 1 and Payal Mohapatra's [S
 
 Reproduces part of English et al.'s paper on probing wav2vec embeddings, but only fits probes for the final hidden state of the encoder, as well as fitting probes for both wav2vec and whisper encoders. Uses [TIMITPhones'](https://github.com/IParraMartin/TIMITPhones/tree/main) map for convenience.
 
+Additionally, attempts dimensionality reduction on the test sets for these encoders.
+
+## Future Plans:
+- attempt HDBSCAN on the reduced-dimension versions of the embeddings
+- compare HDBSCAN classifications with results from the encoders
+- attempt similar probe and dimensionality reduction over only the vowels, to see if vowel-specific acoustic features are still represented
+- maybe? attempt similar things over the hidden layers of both of the encoders
+- similar work, but for mockingjay
+
 ## Usage:
 First! Run  `generate_embeddings.ipynb` to generate and save embeddings for both wav2vec and whisper.
 
