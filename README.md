@@ -3,20 +3,14 @@ Code partially adapted from Jon Rawski's LING 165 Lab 1 and Payal Mohapatra's [S
 
 Reproduces part of English et al.'s paper on probing wav2vec embeddings, but only fits probes for the final hidden state of the encoder, as well as fitting probes for both wav2vec and whisper encoders. Uses [TIMITPhones'](https://github.com/IParraMartin/TIMITPhones/tree/main) map for convenience.
 
-Additionally, attempts dimensionality reduction on the test sets for these encoders.
-
-## Future Plans:
-- attempt HDBSCAN on the reduced-dimension versions of the embeddings
-- compare HDBSCAN classifications with results from the encoders
-- attempt similar probe and dimensionality reduction over only the vowels, to see if vowel-specific acoustic features are still represented
-- maybe? attempt similar things over the hidden layers of both of the encoders
-- similar work, but for mockingjay
+## TODOs:
+- fit similar probes over the hidden layers of the encoders
+- remove padding from the whisper emeddings (and voxtral, if it includes padding)
 
 ## Usage:
-First! Run  `generate_embeddings.ipynb` to generate and save embeddings for both wav2vec and whisper.
+First! Run  `generate_embeddings.ipynb` to generate and save embeddings for both wav2vec, whisper-small, and voxtral mini.
 
-- `probe_training.ipynb` fits probes for manner of articulation and renders their confusion matrices.
-- `voicedness_probe_training.ipynb` does the same, but with voicedness as the variable to predict.
+- `probe_training.ipynb` fits probes to predict manner of articulation from the last hidden state of the encoders. 
 
 
 ## References:
@@ -31,6 +25,8 @@ Zhang, Alice, Edison Thomaz, and Lie Lu. "Transformation of audio embeddings int
 Fiorio, Luan Vinícius, et al. "Unsupervised Variational Acoustic Clustering." *arXiv preprint arXiv:2503.18579* (2025).
 
 Baevski, Alexei, et al. "wav2vec 2.0: A framework for self-supervised learning of speech representations." *Advances in neural information processing systems 33* (2020): 12449-12460.
+
+Mohapatra, P., Pandey, A., Islam, B., & Zhu, Q. (2022, July). Speech disfluency detection with contextual representation and data distillation. In Proceedings of the 1st ACM international workshop on intelligent acoustic systems and applications (pp. 19-24).
 
 Radford, Alec, et al. "Robust speech recognition via large-scale weak supervision." *International conference on machine learning*. PMLR, 2023.
 
